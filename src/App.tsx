@@ -1,14 +1,14 @@
 import {
-  Sorbet,
-  Binance,
   ArbitrumTestnet,
-  OptimismTestnet,
-  OptimismMainnet,
-  xDai,
   Avalanche,
-  MaticTestnet,
-  Matic,
+  Binance,
   Config,
+  Matic,
+  MaticTestnet,
+  OptimismMainnet,
+  OptimismTestnet,
+  Sorbet,
+  xDai,
 } from "@huskyfinance/eth-sorbet";
 import React, { useEffect, useState } from "react";
 import { WindowChain } from "./types";

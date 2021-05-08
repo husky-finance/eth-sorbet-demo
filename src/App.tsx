@@ -13,20 +13,6 @@ import {
 import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { WindowChain } from "./types";
 
-// const networks = [
-//   Binance,
-//   ArbitrumTestnet,
-//   OptimismTestnet,
-//   OptimismMainnet,
-//   xDai,
-//   Avalanche,
-//   MaticTestnet,
-//   Matic,
-// ];
-// const ran = parseInt((Math.random() * networks.length).toFixed(0))
-// const idx = ran === 0 ? ran : ran - 1
-// const idx = 3;
-
 const App = () => {
   const [open, setOpen] = useState(true);
   const [userAddress, setUserAddress] = useState("");
@@ -82,8 +68,8 @@ const App = () => {
   }, [selectedNetwork, handleClose, userAddress, open, darkMode])
 
   return (
-    <div>
-      <h1>Test Site Title</h1>
+    <div style={{padding: '20px'}}>
+      <h1>ETH Sorbet!</h1>
       <button type="button" onClick={handleOpen}>
         Open Modal
       </button>

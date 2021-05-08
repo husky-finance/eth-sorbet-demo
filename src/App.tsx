@@ -31,6 +31,8 @@ const App = () => {
   const [open, setOpen] = useState(true);
   const [userAddress, setUserAddress] = useState("");
 
+  const [darkMode, setDarkMode] = useState(true)
+
   const [selectedNetwork, setNetwork] = useState(ArbitrumTestnet)
 
   const provider = (window as WindowChain).ethereum;
@@ -75,9 +77,9 @@ const App = () => {
       dappLogo: "https://www.kkbox.com/about/img/app_icons/kkbox_app_icon.png",
 
       // darkmode
-      darkMode: Math.random() > 0.5,
+      darkMode: darkMode
     };
-  }, [selectedNetwork, handleClose, userAddress, open])
+  }, [selectedNetwork, handleClose, userAddress, open, darkMode])
 
   return (
     <div>
@@ -88,36 +90,40 @@ const App = () => {
       <Sorbet config={config} walletProvider={provider} />
       <h5>Address: {userAddress} </h5>
       
+      <input type="checkbox" name="gender" checked={darkMode} onChange={(e) => setDarkMode(e.target.checked)}/>
+      <label>DarkMode</label>
+      <br/>
+      <br/>
       
-      <input type="radio" id="male" name="gender" checked={selectedNetwork===ArbitrumTestnet} onClick={() => setNetwork(ArbitrumTestnet)}/>
+      <input type="radio" id="ar" checked={selectedNetwork===ArbitrumTestnet} onClick={() => setNetwork(ArbitrumTestnet)}/>
       <label>Arbitrum</label>
       <br/>
 
-      <input type="radio" id="male" name="gender" checked={selectedNetwork===OptimismMainnet} onClick={() => setNetwork(OptimismMainnet)}/>
+      <input type="radio" id="op" checked={selectedNetwork===OptimismMainnet} onClick={() => setNetwork(OptimismMainnet)}/>
       <label>Optimism</label>
       <br/>
 
-      <input type="radio" id="male" name="gender" checked={selectedNetwork===xDai} onClick={() => setNetwork(xDai)}/>
+      <input type="radio" id="male" checked={selectedNetwork===xDai} onClick={() => setNetwork(xDai)}/>
       <label>xDai</label>
       <br/>
 
-      <input type="radio" id="male" name="gender" checked={selectedNetwork===Matic} onClick={() => setNetwork(Matic)}/>
+      <input type="radio" id="male" checked={selectedNetwork===Matic} onClick={() => setNetwork(Matic)}/>
       <label>Matic</label>
       <br/>
 
-      <input type="radio" id="male" name="gender" checked={selectedNetwork===Binance} onClick={() => setNetwork(Binance)}/>
+      <input type="radio" id="male" checked={selectedNetwork===Binance} onClick={() => setNetwork(Binance)}/>
       <label>Binance</label>
       <br/>
 
-      <input type="radio" id="male" name="gender" checked={selectedNetwork===Avalanche} onClick={() => setNetwork(Avalanche)}/>
+      <input type="radio" id="male" checked={selectedNetwork===Avalanche} onClick={() => setNetwork(Avalanche)}/>
       <label>Avalanche</label>
       <br/>
 
-      <input type="radio" id="male" name="gender" checked={selectedNetwork===OptimismTestnet} onClick={() => setNetwork(OptimismTestnet)}/>
+      <input type="radio" id="male" checked={selectedNetwork===OptimismTestnet} onClick={() => setNetwork(OptimismTestnet)}/>
       <label>Optimism Testnet</label>
       <br/>
 
-      <input type="radio" id="male" name="gender" checked={selectedNetwork===MaticTestnet} onClick={() => setNetwork(MaticTestnet)}/>
+      <input type="radio" id="male" checked={selectedNetwork===MaticTestnet} onClick={() => setNetwork(MaticTestnet)}/>
       <label>Matic Testnet</label>
       <br/>
 

@@ -52,7 +52,7 @@ const App = () => {
   const config: Config = useMemo(() => {
     return {
       targetNetwork: selectedNetwork,
-      dappName: "KKBox",
+      dappName: "ETH Sorbet Demo App",
       open: open,
       handleClose: handleClose,
 
@@ -68,8 +68,7 @@ const App = () => {
   }, [selectedNetwork, handleClose, userAddress, open, darkMode])
 
   return (
-    <div style={{padding: '20px'}}>
-      <h1>ETH Sorbet!</h1>
+      <h1>ETH Sorbet Demo!</h1>
       <button type="button" onClick={handleOpen}>
         Open Modal
       </button>

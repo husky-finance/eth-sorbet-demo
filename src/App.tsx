@@ -52,7 +52,7 @@ const App = () => {
   const config: Config = useMemo(() => {
     return {
       targetNetwork: selectedNetwork,
-      dappName: "ETH Sorbet Demo App",
+      dappName: "ETH Sorbet Demo",
       open: open,
       handleClose: handleClose,
 

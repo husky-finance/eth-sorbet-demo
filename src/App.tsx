@@ -17,9 +17,9 @@ const App = () => {
   const [open, setOpen] = useState(true);
   const [userAddress, setUserAddress] = useState("");
 
-  const [darkMode, setDarkMode] = useState(true)
+  const [darkMode, setDarkMode] = useState(true);
 
-  const [selectedNetwork, setNetwork] = useState(ArbitrumTestnet)
+  const [selectedNetwork, setNetwork] = useState(ArbitrumTestnet);
 
   const provider = (window as WindowChain).ethereum;
 
@@ -63,63 +63,108 @@ const App = () => {
       dappLogo: "https://www.kkbox.com/about/img/app_icons/kkbox_app_icon.png",
 
       // darkmode
-      darkMode: darkMode
+      darkMode: darkMode,
     };
-  }, [selectedNetwork, handleClose, userAddress, open, darkMode])
+  }, [selectedNetwork, handleClose, userAddress, open, darkMode]);
 
   return (
+    <div style={{ padding: "20px" }}>
       <h1>ETH Sorbet Demo!</h1>
       <button type="button" onClick={handleOpen}>
         Open Modal
       </button>
       <Sorbet config={config} walletProvider={provider} />
       <h5>Address: {userAddress} </h5>
-      
-      <input type="checkbox" name="gender" checked={darkMode} onChange={(e) => setDarkMode(e.target.checked)}/>
+
+      <input
+        type="checkbox"
+        name="gender"
+        checked={darkMode}
+        onChange={(e) => setDarkMode(e.target.checked)}
+      />
       <label>DarkMode</label>
-      <br/>
-      <br/>
-      
-      <input type="radio" id="ar" checked={selectedNetwork===ArbitrumTestnet} onClick={() => setNetwork(ArbitrumTestnet)}/>
+      <br />
+      <br />
+
+      <input
+        type="radio"
+        id="ar"
+        checked={selectedNetwork === ArbitrumTestnet}
+        onClick={() => setNetwork(ArbitrumTestnet)}
+      />
       <label>Arbitrum</label>
-      <br/>
+      <br />
 
-      <input type="radio" id="op" checked={selectedNetwork===OptimismMainnet} onClick={() => setNetwork(OptimismMainnet)}/>
+      <input
+        type="radio"
+        id="op"
+        checked={selectedNetwork === OptimismMainnet}
+        onClick={() => setNetwork(OptimismMainnet)}
+      />
       <label>Optimism</label>
-      <br/>
+      <br />
 
-      <input type="radio" id="male" checked={selectedNetwork===xDai} onClick={() => setNetwork(xDai)}/>
+      <input
+        type="radio"
+        id="male"
+        checked={selectedNetwork === xDai}
+        onClick={() => setNetwork(xDai)}
+      />
       <label>xDai</label>
-      <br/>
+      <br />
 
-      <input type="radio" id="male" checked={selectedNetwork===Matic} onClick={() => setNetwork(Matic)}/>
+      <input
+        type="radio"
+        id="male"
+        checked={selectedNetwork === Matic}
+        onClick={() => setNetwork(Matic)}
+      />
       <label>Matic</label>
-      <br/>
+      <br />
 
-      <input type="radio" id="male" checked={selectedNetwork===Binance} onClick={() => setNetwork(Binance)}/>
+      <input
+        type="radio"
+        id="male"
+        checked={selectedNetwork === Binance}
+        onClick={() => setNetwork(Binance)}
+      />
       <label>Binance</label>
-      <br/>
+      <br />
 
-      <input type="radio" id="male" checked={selectedNetwork===Avalanche} onClick={() => setNetwork(Avalanche)}/>
+      <input
+        type="radio"
+        id="male"
+        checked={selectedNetwork === Avalanche}
+        onClick={() => setNetwork(Avalanche)}
+      />
       <label>Avalanche</label>
-      <br/>
+      <br />
 
-      <input type="radio" id="male" checked={selectedNetwork===OptimismTestnet} onClick={() => setNetwork(OptimismTestnet)}/>
+      <input
+        type="radio"
+        id="male"
+        checked={selectedNetwork === OptimismTestnet}
+        onClick={() => setNetwork(OptimismTestnet)}
+      />
       <label>Optimism Testnet</label>
-      <br/>
+      <br />
 
-      <input type="radio" id="male" checked={selectedNetwork===MaticTestnet} onClick={() => setNetwork(MaticTestnet)}/>
+      <input
+        type="radio"
+        id="male"
+        checked={selectedNetwork === MaticTestnet}
+        onClick={() => setNetwork(MaticTestnet)}
+      />
       <label>Matic Testnet</label>
-      <br/>
+      <br />
 
-      <br/>
+      <br />
       {/* <br> */}
       {/* <input type="radio" id="female" name="gender" value="female"> </input> */}
       {/* <label for="female">Female</label> */}
       {/* <br> */}
       {/* <input type="radio" id="other" name="gender" value="other"> </input> */}
       {/* <label for="other">Other</label> */}
-
     </div>
   );
 };

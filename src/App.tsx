@@ -146,7 +146,7 @@ const App = () => {
         checked={selectedNetwork === OptimismTestnet}
         onClick={() => setNetwork(OptimismTestnet)}
       />
-      <label>Optimism Testnet</label>
+      <label>Optimism (Kovan))</label>
       <br />
 
       <input
@@ -155,7 +155,7 @@ const App = () => {
         checked={selectedNetwork === MaticTestnet}
         onClick={() => setNetwork(MaticTestnet)}
       />
-      <label>Matic Testnet</label>
+      <label>Matic (Mumbai)</label>
       <br />
 
       <br />

@@ -19,7 +19,7 @@ const App = () => {
 
   const [darkMode, setDarkMode] = useState(true);
 
-  const [selectedNetwork, setNetwork] = useState(ArbitrumTestnet);
+  const [selectedNetwork, setNetwork] = useState(OptimismTestnet);
 
   const provider = (window as WindowChain).ethereum;
 

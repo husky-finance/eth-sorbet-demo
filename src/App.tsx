@@ -7,10 +7,11 @@ import {
   MaticTestnet,
   OptimismMainnet,
   OptimismTestnet,
+  Sokol,
   Sorbet,
   xDai,
 } from "@huskyfinance/eth-sorbet";
-import React, { useEffect, useState, useMemo, useCallback } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { WindowChain } from "./types";
 
 const App = () => {
@@ -92,43 +93,7 @@ const App = () => {
         checked={selectedNetwork === ArbitrumTestnet}
         onClick={() => setNetwork(ArbitrumTestnet)}
       />
-      <label>Arbitrum</label>
-      <br />
-
-      <input
-        type="radio"
-        id="op"
-        checked={selectedNetwork === OptimismMainnet}
-        onClick={() => setNetwork(OptimismMainnet)}
-      />
-      <label>Optimism</label>
-      <br />
-
-      <input
-        type="radio"
-        id="male"
-        checked={selectedNetwork === xDai}
-        onClick={() => setNetwork(xDai)}
-      />
-      <label>xDai</label>
-      <br />
-
-      <input
-        type="radio"
-        id="male"
-        checked={selectedNetwork === Matic}
-        onClick={() => setNetwork(Matic)}
-      />
-      <label>Matic</label>
-      <br />
-
-      <input
-        type="radio"
-        id="male"
-        checked={selectedNetwork === Binance}
-        onClick={() => setNetwork(Binance)}
-      />
-      <label>Binance</label>
+      <label>Arbitrum (Kovan)</label>
       <br />
 
       <input
@@ -143,10 +108,19 @@ const App = () => {
       <input
         type="radio"
         id="male"
-        checked={selectedNetwork === OptimismTestnet}
-        onClick={() => setNetwork(OptimismTestnet)}
+        checked={selectedNetwork === Binance}
+        onClick={() => setNetwork(Binance)}
       />
-      <label>Optimism (Kovan))</label>
+      <label>Binance Smart Chain</label>
+      <br />
+
+      <input
+        type="radio"
+        id="male"
+        checked={selectedNetwork === Matic}
+        onClick={() => setNetwork(Matic)}
+      />
+      <label>Polygon / Matic (Mainnet)</label>
       <br />
 
       <input
@@ -155,16 +129,46 @@ const App = () => {
         checked={selectedNetwork === MaticTestnet}
         onClick={() => setNetwork(MaticTestnet)}
       />
-      <label>Matic (Mumbai)</label>
+      <label>Polygon / Matic (Mumbai)</label>
+      <br />
+
+      <input
+        type="radio"
+        id="op"
+        checked={selectedNetwork === OptimismMainnet}
+        onClick={() => setNetwork(OptimismMainnet)}
+      />
+      <label>Optimism (Mainnet) </label>
+      <br />
+
+      <input
+        type="radio"
+        id="male"
+        checked={selectedNetwork === OptimismTestnet}
+        onClick={() => setNetwork(OptimismTestnet)}
+      />
+      <label>Optimism (Kovan)</label>
+      <br />
+
+      <input
+        type="radio"
+        id="male"
+        checked={selectedNetwork === Sokol}
+        onClick={() => setNetwork(Sokol)}
+      />
+      <label>POA (Sokol)</label>
+      <br />
+
+      <input
+        type="radio"
+        id="male"
+        checked={selectedNetwork === xDai}
+        onClick={() => setNetwork(xDai)}
+      />
+      <label>xDai</label>
       <br />
 
       <br />
-      {/* <br> */}
-      {/* <input type="radio" id="female" name="gender" value="female"> </input> */}
-      {/* <label for="female">Female</label> */}
-      {/* <br> */}
-      {/* <input type="radio" id="other" name="gender" value="other"> </input> */}
-      {/* <label for="other">Other</label> */}
     </div>
   );
 };
